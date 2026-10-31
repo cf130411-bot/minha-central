@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#10101b">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+<title>Minha Central</title>
+</head>
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div><p class="eyebrow">SUA ROTINA, EM UM SÓ LUGAR</p><h1>Minha <span>Central</span></h1></div>
+    <div class="date-chip" id="today">Hoje</div>
+  </header>
+  <nav class="tabs" aria-label="Navegação principal">
+    <button class="tab active" data-page="home">⌂ <span>Início</span></button>
+    <button class="tab" data-page="tasks">☑ <span>Tarefas</span></button>
+    <button class="tab" data-page="alarms">◷ <span>Alarmes</span></button>
+    <button class="tab" data-page="apps">▦ <span>Atalhos</span></button>
+  </nav>
+  <main>
+    <section class="page active" id="page-home">
+      <div class="hero card">
+        <div><p class="muted">PAINEL DE HOJE</p><h2 id="greeting">Olá! 👋</h2><p class="muted">Organize seu dia do seu jeito.</p></div>
+        <div class="hero-icon">✦</div>
+      </div>
+      <div class="stats">
+        <div class="card stat"><span>☑</span><strong id="pendingCount">0</strong><small>Pendentes</small></div>
+        <div class="card stat"><span>✓</span><strong id="doneCount">0</strong><small>Concluídas</small></div>
+        <div class="card stat"><span>◷</span><strong id="alarmCount">0</strong><small>Alarmes</small></div>
+      </div>
+      <div class="section-head"><h2>Próximas tarefas</h2><button class="text-btn" data-goto="tasks">Ver todas →</button></div>
+      <div id="homeTasks" class="stack"></div>
+      <div class="notice">💡 <span>Para alertas confiáveis mesmo com o app fechado, use também o app Relógio/Lembretes do iPhone. Este protótipo não substitui alarmes nativos.</span></div>
+    </section>
+
+    <section class="page" id="page-tasks">
+      <div class="section-head"><div><p class="eyebrow">PLANEJAMENTO</p><h2>Minhas tarefas</h2></div><button class="primary" id="newTaskBtn">＋ Nova</button></div>
+      <form class="card form hidden" id="taskForm">
+        <label>Nome da tarefa<input id="taskName" required maxlength="80" placeholder="Ex.: Estudar, academia..."></label>
+        <div class="form-row"><label>Data<input id="taskDate" type="date" required></label><label>Horário<input id="taskTime" type="time"></label></div>
+        <label>Categoria<select id="taskCategory"><option>Rotina</option><option>Trabalho</option><option>Estudos</option><option>Saúde</option><option>Lazer</option><option>Casa</option></select></label>
+        <div class="form-actions"><button type="button" class="secondary" id="cancelTask">Cancelar</button><button class="primary" type="submit">Salvar tarefa</button></div>
+      </form>
+      <div id="taskList" class="stack"></div>
+    </section>
+
+    <section class="page" id="page-alarms">
+      <div class="section-head"><div><p class="eyebrow">PONTUALIDADE</p><h2>Meus alarmes</h2></div><button class="primary" id="newAlarmBtn">＋ Novo</button></div>
+      <form class="card form hidden" id="alarmForm">
+        <label>Nome do alarme<input id="alarmName" required maxlength="80" placeholder="Ex.: Acordar"></label>
+        <div class="form-row"><label>Horário<input id="alarmTime" type="time" required></label><label>Som<select id="alarmSound"><option value="bell">Sino</option><option value="chime">Sininho</option><option value="soft">Suave</option></select></label></div>
+        <label class="check-label"><input type="checkbox" id="alarmRepeat" checked> Repetir diariamente</label>
+        <p class="hint">Este protótipo salva o horário e o nome. A notificação só pode ser verificada enquanto a página estiver aberta; não é um alarme nativo do iPhone e não toca músicas em segundo plano.</p>
+        <div class="form-actions"><button type="button" class="secondary" id="cancelAlarm">Cancelar</button><button class="primary" type="submit">Salvar alarme</button></div>
+      </form>
+      <div id="alarmList" class="stack"></div>
+      <div class="notice">🎵 Para escolher uma música que toque como alarme com o iPhone bloqueado, configure o som no app Relógio da Apple ou use uma opção nativa compatível.</div>
+    </section>
+
+    <section class="page" id="page-apps">
+      <div class="section-head"><div><p class="eyebrow">ACESSO RÁPIDO</p><h2>Meus atalhos</h2></div><button class="primary" id="newAppBtn">＋ Adicionar</button></div>
+      <form class="card form hidden" id="appForm">
+        <label>Nome do atalho<input id="appName" required maxlength="50" placeholder="Ex.: WhatsApp"></label>
+        <label>Endereço do site ou link<input id="appUrl" required placeholder="https://..."></label>
+        <label>Emoji<input id="appEmoji" maxlength="4" value="📱" placeholder="📱"></label>
+        <p class="hint">Use links de sites ou links oficiais de atalho. O iOS não permite que um site abra livremente todos os apps instalados.</p>
+        <div class="form-actions"><button type="button" class="secondary" id="cancelApp">Cancelar</button><button class="primary" type="submit">Salvar atalho</button></div>
+      </form>
+      <div id="appList" class="app-grid"></div>
+    </section>
+  </main>
+  <footer>MINHA CENTRAL <span>•</span> PROTÓTIPO PESSOAL</footer>
+</div>
+<script src="app.js"></script>
+</body></html>

@@ -1,0 +1,31 @@
+MINHA CENTRAL — PROTÓTIPO PARA IPHONE
+=====================================
+
+O que já funciona:
+- Interface responsiva em português, tema escuro roxo/ciano.
+- Cadastro, conclusão e exclusão de tarefas.
+- Categorias, datas e horários de tarefas.
+- Cadastro e ativação/desativação de alarmes (registro visual de horário/nome).
+- Cadastro de atalhos para sites.
+- Dados guardados localmente no navegador deste dispositivo.
+- Estrutura básica de PWA para adicionar à tela inicial e cache.
+
+IMPORTANTE:
+1. Este protótipo não é um aplicativo nativo da App Store.
+2. Alarmes cadastrados aqui NÃO são alarmes confiáveis com o app fechado. Use Relógio/Lembretes da Apple para alertas importantes.
+3. Não reproduz música personalizada como alarme do iOS. A seleção de som é apenas um campo demonstrativo nesta versão.
+4. Atalhos web abrem sites. O iOS não permite que um PWA tenha acesso irrestrito a todos os apps instalados.
+5. Para instalar como ícone no iPhone, o site precisa estar hospedado em HTTPS. Abrir o arquivo HTML diretamente não basta para todos os recursos.
+
+COMO TESTAR NO WINDOWS:
+- Extraia o ZIP.
+- Abra index.html no navegador para testar a interface.
+- Os dados ficam salvos no armazenamento local do navegador.
+
+COMO COLOCAR NO IPHONE:
+- Publique os arquivos em um serviço de hospedagem HTTPS (por exemplo, GitHub Pages).
+- No iPhone, abra o endereço publicado usando Safari.
+- Toque em Compartilhar > Adicionar à Tela de Início > Adicionar.
+- O ícone aparece na tela inicial.
+
+Este pacote é um protótipo inicial e não inclui hospedagem configurada.

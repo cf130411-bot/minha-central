@@ -1,0 +1,10 @@
+{
+  "name": "Minha Central",
+  "short_name": "Central",
+  "description": "Tarefas, alarmes organizados e atalhos pessoais.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0d16",
+  "theme_color": "#10101b",
+  "icons": []
+}
